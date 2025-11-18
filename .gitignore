@@ -1,0 +1,7 @@
+# Ignores the 'node_modules' directory and all its contents
+node_modules/
+
+package-lock.json
+
+# Ignores the '.env' file
+.env

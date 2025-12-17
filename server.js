@@ -2,14 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 
 async function connectDB() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://abdelaziz:A2LdZNvc6iqZyH07@node.nnwh9j8.mongodb.net/note?appName=Node"
-    );
+    await mongoose.connect(process.env.MONGODB_URI);
 
     console.log("Connected to MongoDB");
   } catch (error) {
